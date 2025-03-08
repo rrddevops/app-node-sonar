@@ -1,1 +1,1 @@
-Validando a qualidade do código com o SonarCloud
+Validando a qualidade do código com o SonarCloud.

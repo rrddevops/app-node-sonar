@@ -1,8 +1,10 @@
 name: app-node-sonar
 on:
-  pull_request:
+  push:
     branches:
       - develop
+  pull_request:
+    types: [opened, synchronize, reopened]  
 
 jobs:
   run-ci:
@@ -15,6 +17,6 @@ jobs:
       - run: yarn
       - run: yarn test
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
